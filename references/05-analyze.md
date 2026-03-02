@@ -1,176 +1,116 @@
 # Step 5: Conduct Analyses
 
-This is where the real work happens. You're executing the analyses defined in the work plan, testing hypotheses, and building an evidence base. The output is a combination of data analysis (spreadsheets) and written findings.
+Execute the analyses from the work plan, test hypotheses, and build an evidence base. This step has the most back-and-forth — the user validates assumptions before each analysis and reviews results as they emerge.
 
-## Interaction Model: User Validates Assumptions and Reviews Results
+## INPUT Phase (per analysis or batch)
 
-This step has the most back-and-forth. The user validates assumptions before you run each analysis, reviews results as they emerge, and can trigger re-analysis if something doesn't look right. Their corrections make the work better — treat revision requests as the process working correctly, not as failures.
+1. "Key assumptions: I need to assume [X], [Y], [Z]. Reasonable? Better numbers?"
+2. "Sensitivity ranges: [low/base/high]. Feel right?"
+3. "Data gap: I don't have [X]. Use [proxy], or can you provide it?"
+4. "Methodology: I'll approach this by [method]. Concerns?"
 
-### INPUT Phase: Validate Assumptions Before Each Analysis
+Do not proceed with an analysis if the user flags an assumption as unreasonable.
 
-Before executing each major analysis (or batch of related analyses), present the assumptions you'll use and get approval:
+## Deliverables
 
-1. **Key assumptions**: "For this analysis, I need to assume [X], [Y], and [Z]. Here's my rationale for each. Do these seem reasonable? Do you have better numbers?"
-2. **Sensitivity ranges**: "For the sensitivity analysis, I'd use these brackets: [low/base/high]. Do these feel right?"
-3. **Data gaps**: "I don't have data for [X]. Would you like me to use [proxy approach], or can you provide this data?"
-4. **Methodology**: "I'll approach this by [method]. Any concerns or alternative approaches you'd prefer?"
+1. **Analysis Workbook** (.xlsx): Summary tab (one row per analysis: name, finding, implication) + one tab per analysis + assumptions tab
+2. **Findings Document** (.md): Narrative summary per the template below
 
-Do not proceed with an analysis if the user has flagged an assumption as unreasonable. Revise the assumption first.
+## Execution Per Analysis
 
-## What You're Producing
-
-1. **Analysis Workbook** (.xlsx): All quantitative analyses in a structured spreadsheet with charts
-2. **Findings Document** (.md): Narrative summary of what each analysis revealed
-
-## Execution Approach
-
-Work through the analyses in the work plan (Step 4) in priority order. For each analysis:
-
-1. **State the question** you're answering
-2. **Execute the analysis** using the approach defined in the work plan
-3. **Apply the "so what?" test**: What does this finding mean for the key question?
-4. **Assess your hypothesis**: Confirmed, partially confirmed, or disproven?
-5. **Identify follow-up questions**: What new questions does this raise?
-
-## Quantitative Analysis Best Practices
+1. State the question, 2. Execute the analysis, 3. Apply "so what?" test, 4. Assess hypothesis (confirmed/partially/disproven), 5. Identify follow-up questions.
 
 ### Data Handling
-When the user provides data files (.csv, .xlsx):
-- Use the xlsx skill to read and analyze the data
-- Create a clean analysis workbook with labeled tabs
-- Document assumptions and transformations
 
-When no data is provided:
-- Do NOT silently make up estimates. Ask the user first.
-- For each key assumption, present a suggested value with reasoning and ask the user to confirm, adjust, or provide their own number
-- Provide sensitivity ranges (low / base / high case) and let the user validate
-- Cite public data sources when available and ask if the user has better internal data
+**With user data**: Use xlsx skill, create clean workbook, document assumptions and transformations.
+**Without data**: Do NOT silently estimate. For each assumption, present a suggested value with reasoning. Provide sensitivity ranges. Cite public sources. Ask if user has better internal data.
 
-### Analysis Types and How to Execute Them
+**Source tracking (mandatory)**: For every data point used in analysis, record the source (e.g., "Company 10-K, FY2024", "Bureau of Labor Statistics", "Management estimates", "Team analysis"). Include a `sources` column in the analysis workbook's assumptions tab. These sources will be carried through to Steps 6-8 and displayed on every final deliverable page/slide that quotes numbers.
 
-**Trend Analysis**
-- Chart the metric over time
-- Calculate CAGR, period-over-period changes
-- Identify inflection points and annotate what caused them
-- "So what?": Is the trend accelerating, decelerating, or stable?
+### Data Quality and Consistency
 
-**Segmentation**
-- Break the metric by relevant dimensions (customer segment, geography, product, channel)
-- Look for outliers — which segments are dramatically better or worse?
-- Calculate each segment's share of the total
-- "So what?": Where is the concentration? Where is the variance?
+Curate data ruthlessly — only numbers that earn their place should survive to Step 8.
 
-**Benchmarking**
-- Compare performance metrics to peers, industry averages, or best-in-class
-- Normalize for size/scale differences where relevant
-- Identify the gap between current performance and the benchmark
-- "So what?": How big is the gap? Is it closing or widening?
+- **Freshness**: Record the year. For fast-moving domains (AI, crypto, biotech), data older than 18 months is suspect. Flag or drop stale figures.
+- **Cross-check**: Compare all numbers that will coexist in the deliverable. If figures imply contradictory stories (e.g., wildly different TAMs for similar industries), investigate, reconcile, or drop. Present unresolvable inconsistencies to the user.
+- **Less is more**: Two solid, cross-validated data points beat ten scraped from different reports.
+- **Insight first**: Lead findings with the strategic implication, not the number. Reframe "TAM is $4.2B" as "The market is large enough to support multiple entrants — estimated at ~$4B."
 
-**Financial Modeling**
-- Build a simple model: inputs → calculations → outputs
-- Include a base case and 2-3 sensitivity scenarios
-- Calculate key metrics (NPV, IRR, payback, ROI as appropriate)
-- "So what?": Does the economic case hold under reasonable scenarios?
+### Analysis Execution Guides
 
-**Root Cause Analysis**
-- Use the issue tree structure to drill into each branch with data
-- Quantify each branch's contribution to the overall problem
-- Identify the 2-3 branches that explain the majority of the issue
-- "So what?": Which root causes, if addressed, would have the biggest impact?
+**Trend**: Chart over time, CAGR, inflection points. So what: accelerating, decelerating, or stable?
+**Segmentation**: Break by dimensions, find outliers, calculate share of total. So what: where is concentration/variance?
+**Benchmarking**: Compare to peers, normalize for scale, quantify gap. So what: how big is the gap, closing or widening?
+**Financial Modeling**: Inputs → calculations → outputs, base + sensitivity cases, key metrics (NPV/IRR/payback). So what: does the economic case hold?
+**Root Cause**: Drill into branches with data, quantify each branch's contribution, identify top 2-3 drivers.
 
-### Workbook Structure
-
-Organize the .xlsx analysis workbook with:
-
-- **Summary tab**: Key findings table, one row per analysis, columns for analysis name, key finding, and implication
-- **One tab per major analysis**: Clear labels, data with headers, charts where appropriate
-- **Assumptions tab**: All estimates and assumptions in one place with sources and confidence levels
-
-## Qualitative Analysis
-
-For qualitative analyses:
-
-- **Best practice reviews**: Research what leading organizations do, identify patterns, assess applicability
-- **Process analysis**: Map the current process, identify bottlenecks and waste, estimate improvement potential
-- **Risk assessment**: Identify risks, assess likelihood and impact, propose mitigations
-
-Document qualitative findings in the findings document (.md) with the same rigor as quantitative ones — every finding needs a "so what?"
-
-## Findings Document Format
+## Findings Document Template
 
 ```markdown
 # Analysis Findings
 
 ## Summary of Key Findings
-
 | # | Finding | So What? | Confidence |
 |---|---------|----------|------------|
-| 1 | [Crisp statement of what the analysis showed] | [Implication for the key question] | High/Medium/Low |
-| 2 | ... | ... | ... |
+| 1 | [What the analysis showed] | [Implication for key question] | High/Medium/Low |
 
 ## Detailed Findings
-
 ### Analysis 1: [Name]
-**Question**: [What were we trying to answer?]
-**Approach**: [Brief description of method]
-**Key Finding**: [What did we learn?]
-**Supporting Evidence**: [Data points, charts referenced in workbook]
-**So What?**: [What this means for the key question]
-**Hypothesis Status**: [Confirmed / Partially confirmed / Disproven — and what we now believe instead]
-
-### Analysis 2: [Name]
-[Same structure]
+**Question**: [What we were answering]
+**Key Finding**: [What we learned]
+**Supporting Evidence**: [Data points, workbook references]
+**So What?**: [Meaning for key question]
+**Hypothesis Status**: [Confirmed / Partially confirmed / Disproven]
 
 ## Emerging Themes
-[Patterns that cut across individual analyses — these feed into Step 6]
+[Patterns across analyses — feed into Step 6]
 
 ## Open Questions
-[New questions raised by the analysis that may need follow-up]
+[New questions raised]
 
 ## Key Assumptions and Limitations
-[What we assumed, what data was missing, how it affects confidence in the findings]
+[What was assumed, what's missing, impact on confidence]
 ```
 
-## REVIEW Phase: User Reviews Results and Can Trigger Re-Analysis
+### Frontmatter Template
 
-This is the most iterative review phase. Present findings as they emerge and be prepared for the user to challenge them.
+```yaml
+---
+id: 05-analysis-findings
+type: analysis-findings
+step: 5
+title: "Analysis Findings"
+status: draft
+addresses: "01-problem-definition.md#kq"
+findings:
+  - anchor: "05-analysis-findings.md#f-1"
+    label: "[Finding headline]"
+    investigates: "04-work-plan.md#ax-ws1-a1"
+    branch: "02-issue-tree.md#br-[slug]"
+    confidence: high
+hypothesis_status:
+  - anchor: "05-analysis-findings.md#hs-[slug]"
+    hypothesis: "01-problem-definition.md#hyp-[slug]"
+    status: confirmed  # confirmed | disproven | partially_confirmed
+    evidence: "05-analysis-findings.md#f-1"
+    note: "[Brief explanation]"
+---
+```
 
-### After key findings emerge, present them for review:
+## REVIEW Phase
 
-1. **Present findings clearly**: "Here's what the analysis shows: [key finding]. The data supporting this is [evidence]."
-2. **Check against experience**: "Does this match what you're seeing on the ground? Any surprises?"
-3. **Surface hypothesis outcomes**: "This finding [confirms/disproves] our hypothesis that [X]. Before I adjust the direction, what's your read?"
-4. **Flag unexpected patterns**: "I found [unexpected result]. Should I dig deeper, or is there a contextual explanation?"
-5. **Validate interpretations**: "The data suggests [implication]. Are there factors I might be missing that would change this interpretation?"
+Present findings as they emerge. Check against user's experience, surface hypothesis outcomes, flag unexpected patterns, validate interpretations.
 
-### Handling corrections and re-analysis
+**Handling corrections**: User may challenge assumptions (→ revise and re-run), dispute findings (→ investigate discrepancy), request deeper analysis, provide new data, or request a pivot. For any correction that changes a finding, re-present the updated result for approval.
 
-The user may:
+**Pause and get direction**: After each P1 batch, when findings contradict hypotheses significantly, when judgment calls arise, when assumptions are heavy, before pivoting direction.
 
-- **Challenge an assumption**: "That assumption doesn't match our reality." → Revise the assumption and re-run the analysis. Present the updated results.
-- **Dispute a finding**: "That can't be right — we know X." → Investigate the discrepancy. Check data, methodology, and assumptions. Present what you find.
-- **Request deeper analysis**: "Can you dig deeper into [aspect]?" → Run additional analysis on the requested area and present results.
-- **Provide new information**: "Actually, we have data on that." → Incorporate the new data and re-run affected analyses.
-- **Request a pivot**: "This isn't the right angle — let's look at it from [different perspective]." → Adjust the analysis approach per the user's direction.
+**Do not proceed to Step 6 until all key findings are reviewed and approved.**
 
-**For any correction that changes a finding, re-present the updated finding for approval before moving on.** The user needs to see that their correction was incorporated and agree with the new result.
+## Pitfalls
 
-### When to pause and get user direction:
-
-- After completing each P1 analysis (or batch of related P1 analyses)
-- When a finding contradicts the hypothesis significantly
-- When you need to make a judgment call between two valid interpretations
-- When data limitations force you to rely heavily on assumptions
-- Before pivoting analytical direction based on emerging findings
-
-**Do not proceed to Step 6 until the user has reviewed all key findings and approved them.** If they've requested re-analysis on any finding, complete the re-analysis and get approval on the updated results before synthesizing.
-
-## Common Pitfalls
-
-- **Analysis without "so what?"**: A chart without an insight is decoration. Every analysis must answer what it means for the decision.
-- **False precision**: Don't present estimates to 4 decimal places. Round appropriately.
-- **Confirmation bias**: If an analysis disproves your hypothesis, that's valuable — don't bury it.
-- **Boiling the ocean**: Stick to the prioritized work plan unless the user redirects.
-- **Silent assumptions**: Never use an estimate without asking the user first.
-- **Plowing through despite user concerns**: If the partner says "that doesn't look right," stop and investigate. Don't defend the analysis — fix it.
-- **Not re-presenting after corrections**: When the user challenges something and you fix it, always show them the updated version. Don't just say "fixed" and move on.
+- **Analysis without "so what?"**: A chart without insight is decoration
+- **False precision**: Round appropriately
+- **Confirmation bias**: If analysis disproves your hypothesis, that's valuable — don't bury it
+- **Silent assumptions**: Never estimate without asking the user first
+- **Not re-presenting after corrections**: Always show the updated version

@@ -1,555 +1,210 @@
 # Step 8: Communicate
 
-The final step — packaging all the work into a compelling deliverable. This is where the pyramid principle and storylining come together. The best analysis in the world is worthless if it isn't communicated clearly.
-
-## Interaction Model: User Configures the Output
-
-The partner decides how the final output looks. This step starts with the user making seven structured choices that fully define the deliverable's shape, narrative approach, and visual identity. Use the **AskUserQuestion** tool to collect these choices in a structured way.
-
-### INPUT Phase: Collect the User's Communication Preferences
-
-Before building anything, collect the following seven inputs from the user. Use the **AskUserQuestion** tool to present structured choices. You may batch these into 2-3 AskUserQuestion calls (each call supports up to 4 questions).
-
----
-
-#### AskUserQuestion — Batch 1 (Narrative, Title, Exec Summary, Context Slide)
-
-**Question 1 — Narrative Structure**
-header: "Narrative"
-question: "Which narrative structure should the deck follow?"
-multiSelect: false
-Options:
+Package all the work into a compelling deliverable. The best analysis is worthless if it isn't communicated clearly.
 
-1. **Answer-First (Pyramid)**
-   - Lead with the conclusion, then support it with arguments, then evidence. The audience knows where you stand immediately. Minto's Pyramid Principle, BLUF. Best for: aligned audiences, senior stakeholders, time-constrained settings.
+## INPUT Phase: Collect Communication Preferences
 
-2. **Evidence-First (Build)**
-   - Start with observations and data, let the pattern emerge, arrive at a conclusion the audience "discovers" with you. Classic scientific paper structure. Best for: skeptical audiences, counterintuitive conclusions, technical reviews. The detective story — clues accumulate until the solution becomes undeniable.
+Use **AskUserQuestion** to collect 7-8 structured choices in 2-3 batches (up to 4 questions each).
 
-3. **Narrative Arc (SCR)**
-   - Establish shared context (Situation), introduce a disrupting tension (Complication), resolve it (Resolution). The backbone of McKinsey storylining and Freytag's dramatic pyramid. The energy comes from tension and release. Best for: persuasion when the audience needs to feel the problem before they'll accept the solution.
+### Batch 1: Visual Style, Narrative, Title
 
-4. **Transformation (Current → Future → Bridge)**
-   - Paint the "as-is," paint a compelling "to-be," then lay out the path between them. Duarte's oscillation pattern, Monroe's Motivated Sequence. The energy comes from the aspiration gap. Best for: change management, vision-setting, fundraising pitches.
+**Q1 — Visual Style** (header: "Visual Style"): Clean & Minimal / Data-Heavy / Visually Rich / Corporate/Branded (custom). **Ask this first** — visual style shapes every subsequent design decision.
 
-5. **Comparative Evaluation (Options → Criteria → Rec)**
-   - Present structured alternatives, evaluate against explicit criteria, arrive at a selection. The audience's journey is one of structured choice — they need to feel the rigor of the process, not just the answer. Best for: board decisions, investment committees, vendor selections, policy choices.
+**Q2 — Brand Styling** (header: "Brand", PowerPoint only): Check `references/styles/` for available profiles. Options: each found brand + "None (Recommended)" + "Custom." If selected, read the brand file and apply all specified properties. If "Custom," collect brand elements and create a new file from `references/brand-styling-template.md`.
 
-6. **Sequential / Process (Step-by-Step)**
-   - Walk through events, phases, or steps in temporal or logical order. The sequence itself is the insight. Best for: project updates, implementation plans, post-mortems, how-to content.
+**Q3 — Narrative Structure** (header: "Narrative", multiSelect: false):
+1. **Answer-First (Pyramid)** — Lead with conclusion, support with arguments, then evidence. Best for: aligned/senior/time-constrained audiences.
+2. **Evidence-First (Build)** — Observations → pattern → conclusion. Best for: skeptical audiences, counterintuitive conclusions.
+3. **Narrative Arc (SCR)** — Situation → Complication → Resolution. Best for: persuasion, audiences that need to feel the problem first.
+4. **Transformation (Current → Future → Bridge)** — As-is → to-be → path. Best for: change management, vision-setting.
+5. **Comparative Evaluation (Options → Criteria → Rec)** — Alternatives → evaluation → selection. Best for: board decisions, vendor selections.
+6. **Sequential / Process (Step-by-Step)** — Temporal/logical order. Best for: implementation plans, project updates.
 
-**Question 2 — Title and Subtitle**
-header: "Title"
-question: "What should the title and subtitle of the document be? (Enter as 'Title | Subtitle' or just a title)"
-multiSelect: false
-Options:
-- **Auto-generate from problem statement** — I'll derive a title and subtitle from the problem definition and key recommendation.
-- **Enter custom title** — (user selects "Other" to type their own)
+**Q4 — Title and Subtitle** (header: "Title"): Auto-generate from problem statement, or user enters custom.
 
-**Question 3 — Executive Summary**
-header: "Exec Summary"
-question: "Include an executive summary slide/page?"
-multiSelect: false
-Options:
-- **Yes (Recommended)** — A one-slide/page synthesis of the full argument, structured to match the chosen narrative approach. Mandatory for serious decks.
-- **No** — Skip the executive summary. Use only for very short or informal deliverables.
+### Batch 2: Structure, Page Count, Appendix
 
-**Question 4 — Context & Objectives Slide**
-header: "Context"
-question: "Include a Context & Objectives slide/section?"
-multiSelect: false
-Options:
-- **Yes (Recommended)** — Sets the stage: why we're here, what was asked, what success looks like. Grounds the audience before the analysis.
-- **No** — Jump straight into findings. Use when the audience is already deeply familiar with the context.
+**Q5 — Executive Summary** (header: "Exec Summary"): Yes (recommended) / No.
 
----
+**Q6 — Context & Objectives** (header: "Context"): Yes (recommended) / No.
 
-#### AskUserQuestion — Batch 2 (Content Pages, Appendix, Visual Style)
+**Q7 — Content Pages** (header: "Page Count"): Compact (4-6) / Standard (8-12) / Comprehensive (15-20) / Custom. Count excludes title, exec summary, and context slides.
 
-**Question 5 — Number of Content Pages**
-header: "Page Count"
-question: "How many content slides/pages? (This count excludes the title slide, exec summary, and context & objectives — it covers analysis, findings, recommendations, and next steps only.)"
-multiSelect: false
-Options:
-- **Compact (4-6)** — Tight, high-level, one insight per slide. Best for time-constrained audiences.
-- **Standard (8-12)** — Room to develop each argument with supporting evidence. The consulting default.
-- **Comprehensive (15-20)** — Deep treatment with detailed evidence, multiple sub-analyses, and implementation detail.
-- **Custom** — (user selects "Other" to specify an exact number)
+**Q8 — Appendix** (header: "Appendix"): Yes (recommended) / No.
 
-**Question 6 — Appendix Section**
-header: "Appendix"
-question: "Include an appendix section?"
-multiSelect: false
-Options:
-- **Yes (Recommended)** — Detailed data tables, methodology notes, assumptions, sensitivity analyses, and backup slides. Keeps the main deck clean while preserving rigor.
-- **No** — No appendix. Everything that matters is in the body. Use for short, informal deliverables.
+### Follow-up Questions (conversational, after structured choices)
 
-**Question 7 — Visual Style**
-header: "Visual Style"
-question: "Which visual style should the deliverable follow?"
-multiSelect: false
-Options:
-- **Clean & Minimal** — White space, simple typography, muted accent colors. Elegant and modern. Lets the content breathe.
-- **Data-Heavy / Analytical** — Dense charts, tables, and quantitative evidence on every page. Serious, rigorous feel. Best for technical or financial audiences.
-- **Visually Rich / Diagrammatic** — Frameworks, process flows, icons, and conceptual diagrams. Best for strategy presentations and change narratives.
-- **Corporate / Branded** — (user selects "Other" to specify brand colors, fonts, and any template requirements)
+1. **Audience**: Who, what level, what they know
+2. **Key message**: The one thing to remember
+3. **Tone**: Bold/decisive vs. cautious/options-oriented
+4. **Sensitive content**: Anything to frame carefully or put in appendix
 
-**Question 8 — Brand Styling** (ask only if output is PowerPoint)
-header: "Brand"
-question: "Apply a brand styling profile?"
-multiSelect: false
+## CRITICAL: No Literal Framework Labels
 
-Before presenting this question, check which `.md` files exist in `references/styles/`. List each one as an option by brand name. Always include a "None" option and a custom option.
+**Never use framework terminology as slide titles, section headers, or labels.** The frameworks shape structure — the audience sees only context-specific content.
 
-Options (dynamically generated):
-- **[Brand Name]** — for each `.md` file found in `references/styles/` (e.g., "McKinsey" if `mckinsey.md` exists)
-- **None (Recommended)** — Use the visual style from Q7 with the default palette from the pptx skill's design guidance.
-- **Custom** — (user selects "Other" to describe brand requirements; you then create a new styling file from the template)
+Instead of "Situation" → describe the actual context. Instead of "Complication" → describe the actual disruption. Instead of "Resolution" → describe the actual solution. Instead of "Current State" / "Future State" / "Bridge" → describe what's happening, the vision, and the path. Instead of "The Options" / "Evaluation Criteria" → describe what's being compared and what criteria reflect.
 
-**If a brand style is selected**: Read the corresponding file from `references/styles/` and apply all specified fonts, colors, layout rules, and slide type overrides when generating the PowerPoint. The brand styling file takes precedence over the Q7 visual style for any property it defines — but the Q7 choice still governs overall content density and layout philosophy (e.g., "Data-Heavy" still means dense charts even in McKinsey styling).
+**Exception**: "Executive Summary" is a standard navigational label and should be used as-is.
 
-**If "Custom" is selected**: Ask the user for their brand's key elements (primary color, fonts, any specific requirements), create a new `.md` file in `references/styles/` using the template from `references/brand-styling-template.md`, and apply it.
+## Deliverable: .pptx or .docx
 
----
-
-### Additional Context Questions (asked as free-text follow-ups after the structured choices above)
-
-After collecting the seven structured inputs, ask these open-ended follow-ups conversationally (not via AskUserQuestion):
-
-1. **Audience**: "Who will be in the room? What's their level (C-suite, middle management, board)? What do they already know about this problem?"
-2. **Key message**: "If the audience remembers only one thing, what should it be?"
-3. **Tone**: "Should this feel bold and decisive, or cautious and options-oriented? Is this a 'we recommend X' deck or a 'here are three paths, let's discuss' deck?"
-4. **Sensitive content**: "Are there findings or recommendations that are politically sensitive? Anything to frame carefully or leave for the appendix?"
-
----
-
-## What You're Producing
-
-Either an **Executive Presentation** (.pptx) or an **Executive Report** (.docx), shaped by the user's seven choices above. The deliverable's structure is not fixed — it is **assembled from the user's selections**.
-
-### If PowerPoint (.pptx)
-
-Use the pptx skill to create the presentation. Follow the storyline structure below, adjusted per the user's narrative structure choice.
-
-### If Word Document (.docx)
-
-Use the docx skill to create the report. Follow the same narrative structure adapted for prose format.
-
----
-
-## Narrative Structure Playbooks
-
-Based on the user's choice in Question 1, follow the corresponding playbook to build the storyline. Each playbook defines the arc — the specific slide/section sequence, how to build the headline chain, and what kind of content belongs where.
-
-### CRITICAL: No Literal Framework Labels in Deliverables
-
-**Never use framework terminology as literal section headings, slide titles, or labels in the final deliverable.** The frameworks (SCR, Current→Future→Bridge, Options→Criteria→Rec, etc.) are *thinking tools* that shape the narrative structure — they are NOT labels the audience should see.
-
-Instead of framework jargon, use **descriptive, context-specific language** that communicates what each section actually says about the client's situation. For example:
-- Instead of "Situation" → describe the actual context (e.g., "The European market has delivered consistent 8% growth for a decade")
-- Instead of "Complication" → describe the actual disruption (e.g., "Three regulatory changes threaten the core business model")
-- Instead of "Resolution" → describe the actual solution (e.g., "A dual-track strategy preserves margin while capturing the adjacent opportunity")
-- Instead of "The Current State" → describe what's happening now (e.g., "Manual processes consume 40% of analyst time")
-- Instead of "The Future State" → describe the vision (e.g., "Automated workflows free analysts to focus on high-value judgment calls")
-- Instead of "The Bridge" → describe the path (e.g., "Three investments close the gap in 18 months")
-
-The headline chain templates below use placeholders like `[describe the baseline context]` to remind you to generate context-specific language. The audience should experience a compelling narrative — not see the scaffolding behind it.
-
-**One exception**: The executive summary slide/page title should begin with "Executive Summary" — this is a standard navigational label that audiences expect, not framework jargon.
-
-### Playbook 1: Answer-First (Pyramid)
-
-**Arc**: Conclusion → Supporting Arguments → Evidence
-
-**Headline Chain Template**:
-```
-1. [Title slide]
-2. [Exec summary — if selected] The answer is X, supported by three pillars
-3. [Context — if selected] [Company] asked us to evaluate [question]
-4. Our recommendation is [core recommendation] — THE ANSWER
-5. The first reason: [argument 1 with headline-as-sentence]
-6. Evidence: [data/chart supporting argument 1]
-7. The second reason: [argument 2 with headline-as-sentence]
-8. Evidence: [data/chart supporting argument 2]
-9. The third reason: [argument 3 with headline-as-sentence]
-10. Evidence: [data/chart supporting argument 3]
-11. Implementation requires [next steps]
-12. [Appendix — if selected]
-```
-
-**When to use**: The audience is aligned, senior, or time-constrained. They want the answer up front.
-
-### Playbook 2: Evidence-First (Build)
-
-**Arc**: Observations → Pattern → Conclusion
-
-**Headline Chain Template**:
-```
-1. [Title slide]
-2. [Exec summary — if selected] Three converging signals point to [conclusion]
-3. [Context — if selected] We set out to understand [question]
-4. Observation 1: [data point / finding that surprises or intrigues]
-5. Observation 2: [second data point that reinforces the pattern]
-6. Observation 3: [third data point that makes the pattern undeniable]
-7. Taken together, these findings reveal [the pattern / insight]
-8. This means [implication for the business]
-9. Therefore, we recommend [recommendation]
-10. Next steps to act on this insight
-11. [Appendix — if selected]
-```
-
-**When to use**: The conclusion is counterintuitive. The audience needs to see the evidence accumulate before they'll accept the answer.
-
-### Playbook 3: Narrative Arc (SCR)
-
-**Arc**: Situation → Complication → Resolution
-
-**Headline Chain Template**:
-```
-1. [Title slide]
-2. [Exec summary — if selected] [Company] faces [complication] but can [resolution]
-3. [Context — if selected] The starting point: [shared context everyone agrees on]
-4. [Describe the baseline context — e.g., "Global widget demand has grown 8% annually since 2019"]
-5. [Supporting detail that sets the scene — e.g., "Three product lines drive 85% of margin"]
-6. [Describe the disruption — e.g., "New EU regulations eliminate the cost advantage in two core segments"]
-7. [Quantify the stakes — e.g., "Inaction puts $120M in annual revenue at risk by 2027"]
-8. [State the key insight — e.g., "A dual-track compliance and diversification strategy preserves margin"]
-9. [State the recommendation — e.g., "Invest $15M over 18 months in regulatory readiness and adjacent-market entry"]
-10. [Specific initiative 1 — e.g., "Accelerate reformulation of the top 12 affected SKUs"]
-11. [Specific initiative 2 — e.g., "Launch pilot in Southeast Asian market by Q3"]
-12. [Quantified benefit — e.g., "Combined impact: $95M in protected and new revenue by 2028"]
-13. Next steps and milestones
-14. [Appendix — if selected]
-```
-
-**Important**: Do NOT label sections as "Situation," "Complication," or "Resolution." The audience should experience the narrative tension naturally — they should feel the baseline, then the disruption, then the path forward — without seeing the framework labels.
-
-**When to use**: The audience needs to feel the problem before they'll accept the solution. Classic persuasion structure.
-
-### Playbook 4: Transformation (Current → Future → Bridge)
-
-**Arc**: As-Is → To-Be → How to Get There
-
-**Headline Chain Template**:
-```
-1. [Title slide]
-2. [Exec summary — if selected] From [current state] to [future vision] via [bridge]
-3. [Context — if selected] We were asked to chart a path from [starting point] to [aspiration]
-4. [Describe today's reality — e.g., "Manual underwriting processes handle only 200 applications per day"]
-5. [What's broken — e.g., "Error rates exceed 12% and cycle times have doubled since 2023"]
-6. [Describe the vision — e.g., "AI-augmented workflows can process 1,500 applications daily at <2% error"]
-7. [What good looks like — e.g., "Top-quartile insurers already achieve 5x throughput with similar models"]
-8. [Describe the path — e.g., "Three investments close the gap in 18 months"]
-9. [Initiative 1 — e.g., "Deploy automated triage for low-complexity applications (60% of volume)"]
-10. [Initiative 2 — e.g., "Retrain underwriting staff on exception-handling workflows"]
-11. [Initiative 3 — e.g., "Integrate real-time data feeds to eliminate manual lookups"]
-12. [Roadmap — e.g., "Phased rollout: pilot in Q2, scale in Q3, full deployment by Q4"]
-13. [Appendix — if selected]
-```
-
-**Important**: Do NOT use labels like "The Current State," "The Future State," or "The Bridge." Instead, describe each section in terms that are specific to the client's situation — what's happening today, what's possible, and how to get there. The aspiration gap should be felt through the content, not signposted with framework jargon.
-
-**When to use**: Change management, vision-setting, or any situation where the aspiration gap is the motivating force.
-
-### Playbook 5: Comparative Evaluation (Options → Criteria → Recommendation)
-
-**Arc**: Alternatives → Evaluation Framework → Selection
-
-**Headline Chain Template**:
-```
-1. [Title slide]
-2. [Exec summary — if selected] Option [X] best meets our criteria across [dimensions]
-3. [Context — if selected] [Company] needs to choose between [N options] for [decision]
-4. [Describe the alternatives — e.g., "Three platform architectures can support the next decade of growth"]
-5. [Option A — e.g., "Full cloud migration delivers maximum scalability at highest upfront cost"]
-6. [Option B — e.g., "Hybrid architecture balances flexibility with infrastructure continuity"]
-7. [Option C — e.g., "Modernize-in-place minimizes disruption but limits future optionality"]
-8. [Describe the evaluation approach — e.g., "Five criteria reflect the board's stated priorities"]
-9. [Show the framework — e.g., "Cost, scalability, risk, timeline, and talent availability weighted by strategic importance"]
-10. [Show comparative results — e.g., "The hybrid approach scores highest on the weighted assessment"]
-11. [Explain why — e.g., "Hybrid architecture outperforms on cost-adjusted scalability and implementation risk"]
-12. [Risks — e.g., "Key risks center on integration complexity — mitigated by a phased rollout"]
-13. [Implementation — e.g., "A 24-month implementation in three phases minimizes operational disruption"]
-14. [Appendix — if selected]
-```
-
-**Important**: Do NOT use generic labels like "The Options," "Evaluation Criteria," or "Evaluation." Each headline should describe *what* is being compared, *what* the criteria reflect, and *what* the assessment reveals — in language specific to the decision at hand.
-
-**When to use**: The audience needs to see the rigor of the selection process. Board decisions, vendor selections, investment committees.
-
-### Playbook 6: Sequential / Process (Step-by-Step)
-
-**Arc**: Phase 1 → Phase 2 → Phase 3 → ... → Phase N
-
-**Headline Chain Template**:
-```
-1. [Title slide]
-2. [Exec summary — if selected] A [N]-phase approach delivers [outcome] by [timeline]
-3. [Context — if selected] [Company] needs to [objective] — here is the execution plan
-4. Overview: The [N] phases at a glance [framework/timeline slide]
-5. Phase 1: [name] — [action title stating what happens and why it matters]
-6. Phase 1 detail: [key activities, milestones, deliverables]
-7. Phase 2: [name] — [action title]
-8. Phase 2 detail: [key activities, milestones, deliverables]
-9. Phase N: [name] — [action title]
-10. Phase N detail: [key activities, milestones, deliverables]
-11. Dependencies and risk factors across phases
-12. Overall timeline and resource requirements
-13. [Appendix — if selected]
-```
-
-**When to use**: Implementation plans, project updates, post-mortems, process documentation.
-
----
-
-## Assembling the Deck/Document Structure
-
-The final structure is assembled from the user's choices. Not every section is present — only those the user selected.
+Use the pptx or docx skill accordingly.
 
 ### Assembly Order
 
 ```
-1. Title Slide / Title Page                    ← ALWAYS present
-2. Executive Summary                           ← if user selected YES in Q3
-3. Context & Objectives                        ← if user selected YES in Q4
-4. Content Pages (per narrative playbook)       ← count from Q5
-5. Appendix                                    ← if user selected YES in Q6
+1. Title Slide/Page                    ← ALWAYS
+2. Executive Summary                   ← if Q3 = Yes
+3. Context & Objectives                ← if Q4 = Yes
+4. Content Pages (per narrative)       ← count from Q5
+5. Appendix                            ← if Q6 = Yes
 ```
 
-**Title slide** uses the user's title and subtitle from Q2 (or auto-generated from the problem statement if they chose that option), plus date and confidentiality marking.
+### Frontmatter Template
 
-**Content page count**: The number from Q5 covers all slides/pages between the Context & Objectives section and the Appendix. This is the analysis, findings, recommendations, and next steps — the "meat" of the deck. Adapt the playbook headline chain to fit within this count. If the user chose 4-6 content pages, compress: combine related insights, use one slide per argument. If they chose 15-20, expand: add evidence slides, sub-analyses, implementation detail.
-
+```yaml
 ---
-
-## The Pyramid Principle
-
-Barbara Minto's Pyramid Principle is the communication backbone for all narrative structures (even non-pyramid ones use it at the slide level):
-
-1. **Start with the answer** (the governing thought)
-2. **Group supporting arguments** logically below it
-3. **Support each argument** with evidence
-4. **Every level answers "why?" or "how?"** for the level above
-
-Even in an Evidence-First or SCR deck, each individual slide should follow the pyramid internally: action title states the point, body provides the support.
-
-## Storylining
-
-Before building slides or pages, build the storyline. The storyline is the sequence of key messages (action titles / section headings) that takes the audience through the chosen narrative arc.
-
-### How to Build the Storyline
-
-1. **Select the playbook** matching the user's narrative structure choice (Q1)
-2. **Fill in the headline chain** using content from Steps 1-7
-3. **Include or exclude** exec summary, context & objectives, and appendix per the user's choices (Q3, Q4, Q6)
-4. **Fit to the page count** from Q5 — compress or expand the playbook template
-5. **Test the chain**: Read just the headlines in sequence. They should tell the complete story on their own.
-
-If you read just the titles/headlines in sequence, you should get the full story regardless of which narrative structure was chosen.
-
+id: 08-final-deliverable
+type: communication
+step: 8
+title: "Final Deliverable"
+status: draft
+addresses: "01-problem-definition.md#kq"
+presents:
+  - "07-recommendations.md#rec-core"
+  - "06-synthesis.md#ans"
+narrative_structure: answer-first  # answer-first | evidence-first | narrative-arc | transformation | comparative | sequential
+visual_style: clean-minimal  # clean-minimal | data-heavy | visually-rich | corporate-branded
+page_count: 0
 ---
+```
 
-## Visual Style Application
+## Narrative Structure Playbooks
 
-Based on the user's choice in Q7, apply the following visual principles:
+### 1. Answer-First (Pyramid)
+**Arc**: Conclusion → Supporting Arguments → Evidence
+```
+Title → [Exec summary] → [Context] → THE ANSWER (core rec) → Argument 1 + evidence → Argument 2 + evidence → Argument 3 + evidence → Implementation/next steps → [Appendix]
+```
 
-### Clean & Minimal
-- Generous white space (40%+ of each slide should be empty)
-- One accent color + black/dark gray text
-- Simple sans-serif typography
-- Charts with minimal gridlines and labels
-- No decorative elements — content speaks for itself
+### 2. Evidence-First (Build)
+**Arc**: Observations → Pattern → Conclusion
+```
+Title → [Exec summary] → [Context] → Observation 1 → Observation 2 → Observation 3 → The pattern/insight → Implication → Recommendation → Next steps → [Appendix]
+```
 
-### Data-Heavy / Analytical
-- Dense layouts with charts, tables, and callout numbers
-- Multiple data visualizations per slide where appropriate
-- Footnotes and source citations on every data slide
-- Muted, professional color palette (blues, grays)
-- Small but readable fonts to fit more information
+### 3. Narrative Arc (SCR)
+**Arc**: Situation → Complication → Resolution
+```
+Title → [Exec summary] → [Context] → Baseline context (2 slides) → Disruption + stakes (2 slides) → Key insight → Recommendation → Specific initiatives → Quantified benefit → Next steps → [Appendix]
+```
+Use context-specific headlines — never label sections "Situation," "Complication," "Resolution."
 
-### Visually Rich / Diagrammatic
-- Framework diagrams, process flows, and concept maps
-- Icons to represent key ideas
-- Color-coded categories and phases
-- Visual metaphors (bridges, pyramids, funnels)
-- Balance of text and visual elements
+### 4. Transformation (Current → Future → Bridge)
+**Arc**: As-Is → To-Be → How to Get There
+```
+Title → [Exec summary] → [Context] → Today's reality + what's broken → The vision + what good looks like → The path (initiatives) → Roadmap → [Appendix]
+```
+Never use "Current State," "Future State," "Bridge" as labels.
 
-### Corporate / Branded
-- Apply the user's specified brand colors, fonts, and logo
-- Follow any template or style guide they provide
-- Match the visual language of their existing materials
+### 5. Comparative Evaluation
+**Arc**: Alternatives → Evaluation → Selection
+```
+Title → [Exec summary] → [Context] → The alternatives (1 slide each) → Evaluation approach/criteria → Comparative results → Why winner wins → Risks → Implementation → [Appendix]
+```
 
-### Applying a Brand Styling Profile
+### 6. Sequential / Process
+**Arc**: Phase 1 → Phase 2 → ... → Phase N
+```
+Title → [Exec summary] → [Context] → Overview (phases at a glance) → Phase 1 + detail → Phase 2 + detail → ... → Dependencies/risks → Timeline/resources → [Appendix]
+```
 
-When the user selects a brand styling profile (Q8), read the corresponding `.md` file from `references/styles/` and apply its properties systematically:
+### Building the Storyline
 
-1. **Typography**: Use the specified `heading_font`, `body_font`, and `accent_font` with the size scale from the file. These override the pptx skill's default font choices.
-2. **Colors**: Use the full palette — core brand colors, text colors, backgrounds, chart colors, and functional colors. These override any palette from the Q7 visual style.
-3. **Layout**: Apply the specified margins, title bar style, and footer settings.
-4. **Logo**: If `logo_file` is specified and the file exists in `references/styles/logos/`, include it per the placement rules.
-5. **Slide type overrides**: Apply any per-slide-type customizations (title slide, dividers, content, closing).
-6. **Q7 still governs density**: The visual style choice (Clean & Minimal, Data-Heavy, Visually Rich) still determines layout density, chart frequency, and content-to-whitespace ratio — the brand styling file only controls the visual identity (fonts, colors, spacing, chrome).
+1. Select playbook matching Q1 choice
+2. Fill headline chain using Steps 1-7 content — **the headline chain must form a coherent argument using only words, no numbers required**
+3. Include/exclude sections per Q3, Q4, Q6
+4. Fit to page count from Q5
+5. **Narrative-first test**: Read just the headlines — they should tell the complete story as a logical argument. If any headline only works because of a number (e.g., "The market is $4.2B"), rewrite it to lead with the insight (e.g., "The target market is large enough to sustain our growth thesis")
+6. **Number placement pass**: Only after the narrative is locked, decide where a specific number would strengthen a point. Most slides should work without any numbers. Add numbers sparingly as emphasis, not as the backbone.
 
----
+## CRITICAL: Narrative-First, Not Data-First
 
-## PowerPoint-Specific Guidance
+**This is a thought leadership piece, not a quantitative research report.** Every slide must make sense without numbers. Numbers emphasize points — they never construct them.
 
-### Slide Design Principles
+- **Strip test**: Remove all numbers from a slide. If it becomes meaningless, the slide is structured wrong — rewrite around the insight.
+- **Emphasis, not backbone**: Good: "Adoption is accelerating — enterprise deployments tripled last year." Bad: "Enterprise AI deployments reached 14,200 in 2024, up from 4,700 in 2023."
+- **No data dumps**: If a slide has more than 2-3 numbers, question whether each one is pulling its weight. A slide full of internet-sourced statistics is a literature review, not analysis.
 
-**The Action Title Rule**: Every slide title is a complete sentence stating the key message — not a topic label.
+Data integrity rules (freshness, cross-checking, fewer-is-better) are enforced at Step 5 — see `05-analyze.md` Data Quality and Consistency. The Sceptical Review Subagent (Gate 2) will catch anything that slips through.
 
-| Bad title | Good title |
-|-----------|-----------|
-| "Market Analysis" | "The target market is growing at 12% annually, driven by segment X" |
-| "Cost Breakdown" | "Manufacturing costs have risen 23% due to raw material inflation" |
-| "Recommendations" | "A three-phase approach can recover $15M in annual margin" |
+## Slide Design Principles
 
-**Slide Body Guidelines**:
-- One message per slide
-- Visual evidence: Charts, tables, diagrams over text
-- Minimize text: 1-line bullets, max 5-6 per slide
-- Source everything
+**Action Title Rule**: Every title is a complete sentence stating the key insight — lead with the argument, not the number.
 
-### Framework-to-Deep-Dive Numbering
+| Bad | Good |
+|-----|------|
+| "Market Analysis" | "The target market is large and growing fast enough to sustain our thesis" |
+| "$4.2B TAM at 23% CAGR" | "Market tailwinds create a compelling window for entry — the segment has grown 3x in four years" |
+| "Cost Breakdown" | "Rising input costs are compressing margins and require a structural response" |
 
-When a slide (or page) presents a **framework** — a visual with multiple blocks, pillars, phases, or components — and subsequent slides (or pages) detail each block individually, apply **consistent numbering** to link the overview to the detail:
+**Body**: One message per slide. Visual evidence over text. Max 5-6 one-line bullets.
 
-1. **On the framework slide**: Label each block with a number or letter identifier (e.g., `1`, `2`, `3` or `A`, `B`, `C` or `i`, `ii`, `iii`). The choice of Arabic numerals, Roman numerals, uppercase letters, or lowercase letters should match the document's style and the user's preference — if not specified, default to Arabic numerals.
+**Source Footer**: Any slide/page with numbers gets a `Source: [citation(s)]` line at the bottom (~8pt, light gray for .pptx; 8-9pt gray for .docx). Multiple sources separated by semicolons. No superscript footnotes. Omit only on pages with no quantitative content.
 
-2. **On each deep-dive slide**: Include the same identifier in the slide title or a prominent tag, so the audience can instantly trace the detail back to its position in the framework. Format example:
-   - Framework slide title: "A three-pillar strategy drives the turnaround"
-     - Block labels: `1. Cost restructuring`, `2. Revenue diversification`, `3. Operational excellence`
-   - Deep-dive slide titles: "**1.** Cost restructuring can unlock $8M in annual savings", "**2.** Revenue diversification targets three adjacent markets", "**3.** Operational excellence requires investment in automation"
+**Framework-to-Deep-Dive Numbering**: When a framework slide has multiple blocks and subsequent slides detail each, use consistent numbering (Arabic, Roman, or letters) on both overview and detail slides.
 
-3. **Consistency rule**: The numbering scheme used on the framework page must carry through identically to every deep-dive page. Never switch from Roman to Arabic mid-sequence.
-
-This applies equally to Word documents — section headers for deep-dive content should carry the same identifier as the corresponding element in the framework figure.
-
-### Chart Choice Guide
-
-| What you're showing | Chart type |
-|--------------------|------------|
-| Trend over time | Line chart |
-| Comparison across categories | Bar chart |
-| Part of whole | Stacked bar or waterfall (avoid pie charts) |
-| Correlation | Scatter plot |
-| Process or flow | Diagram / flowchart |
-| Single key number | Large number callout with context |
-
----
+**Chart Choice**: Trend → line, Comparison → bar, Part-of-whole → stacked bar/waterfall (avoid pie), Correlation → scatter, Process → diagram, Key number → large callout.
 
 ## Executive Summary Guidance (when selected)
 
-When the user selects "Yes" for the executive summary (Q3), it serves as the **structural spine** of the entire document.
+Adapts to narrative structure but **never uses framework labels**:
+- **Answer-First**: Recommendation → supporting reasons → impact
+- **Evidence-First**: Key signals → conclusion they point to
+- **SCR**: Context → disruption → path forward (no "Situation"/"Complication"/"Resolution" labels)
+- **Transformation**: Today → target → path (no "Current State"/"Future State"/"Bridge")
+- **Comparative**: Decision → options → winner → why
+- **Sequential**: Phases → timeline → outcome
 
-The exec summary format adapts to the chosen narrative structure — but **never uses framework labels** as headings or paragraph markers. The structure should be felt, not announced:
+**Spine test**: Exec summary alone should convey the full argument. Slide titles alone should reconstruct the exec summary.
 
-- **Answer-First**: Lead with the recommendation, then the 2-3 supporting reasons, then expected impact.
-- **Evidence-First**: Lead with the key signals, summarize each, state the conclusion they point to.
-- **Narrative Arc (SCR)**: Open with the shared context, introduce the disruption or tension, then present the path forward — using language specific to the client's situation, not the words "Situation," "Complication," or "Resolution."
-- **Transformation**: Describe where things stand today, paint the target outcome, then summarize the path between them — without labeling sections "Current State," "Future State," or "Bridge."
-- **Comparative Evaluation**: State the decision, the options considered, the evaluation approach, the winner, and why.
-- **Sequential**: Summarize the phases, the overall timeline, and the expected outcome.
+## Context & Objectives (when selected)
 
-**The spine test**: If you delete every slide except the exec summary, the reader should still understand the full argument. If you delete the exec summary and read only the slide titles in sequence, you should reconstruct the exec summary.
+1. Why we're here (triggering event), 2. What was asked (question/scope), 3. How we approached it (1-2 sentences), 4. What success looks like (from Step 1).
 
----
+## Visual Style Application
 
-## Context & Objectives Guidance (when selected)
+**Clean & Minimal**: 40%+ white space, one accent color, minimal gridlines, no decoration.
+**Data-Heavy**: Dense charts/tables, multiple visualizations per slide, muted palette.
+**Visually Rich**: Framework diagrams, process flows, icons, color-coded categories.
+**Corporate/Branded**: Apply user's brand colors, fonts, logo, match existing materials.
 
-When the user selects "Yes" for Context & Objectives (Q4), this slide/section should cover:
+**Brand styling profiles** (Q2): Read from `references/styles/`, apply typography, colors, layout, logo per the file. Visual style still governs density — brand file only controls visual identity.
 
-1. **Why we're here**: The triggering event, request, or business need
-2. **What was asked**: The specific question or scope of work
-3. **How we approached it**: Brief methodology note (1-2 sentences)
-4. **What success looks like**: The decision criteria or success metrics from Step 1
+## Word Document Guidance
 
-This grounds the audience before the analysis begins. Draw directly from the Step 1 problem statement.
-
----
-
-## Word Document-Specific Guidance
-
-### Report Structure (assembled from user choices)
-
-- **Title page**: Uses title and subtitle from Q2 (or auto-generated), plus date and confidentiality marking
-- **Executive Summary** (1-2 pages, if selected in Q3): Adapted to the chosen narrative structure
-- **Context & Objectives** (1-2 pages, if selected in Q4): Why, what, how, and success criteria
-- **Content sections** (count from Q5, adapted to chosen narrative playbook): Analysis, findings, recommendations, next steps — organized per the playbook
-- **Appendices** (if selected in Q6): Detailed data, methodology, assumptions, sensitivity analyses
-
-### Writing Style for Reports
-
-Apply the writing style guide principles (see `references/writing-style.md`) throughout. The prose should be:
-- **Concise**: Omit needless words. No throat-clearing.
-- **Active**: "The analysis reveals" not "It was revealed by the analysis"
-- **Specific**: Concrete numbers and examples, not vague generalizations
-- **Direct**: Lead with the conclusion, then support it
-
----
+Same narrative structures adapted for prose. Apply writing style guide throughout. Report structure: Title page → Exec Summary (if Q5) → Context (if Q6) → Content sections → Appendices (if Q8). Source footer goes at the end of each section that quotes numbers (same format as slides).
 
 ## Language Quality: Final Editing Pass
 
-Before presenting the final deliverable to the user, run all prose through a dedicated editing pass. Read `references/writing-style.md` for the full style guide and apply its principles:
+Before presenting, run all prose through editing per `references/writing-style.md`: cut filler, active voice, specific language, complete-sentence titles, read exec summary aloud. The goal is prose worthy of a top-tier consulting firm.
 
-- Omit needless words — cut filler, hedging, and throat-clearing
-- Use active voice — "Revenue declined" not "A decline in revenue was observed"
-- Be specific — "$4.2M savings" not "significant savings"
-- Avoid fancy words — "use" not "utilize," "help" not "facilitate"
-- Place emphatic words at the end of sentences
-- Write naturally — if it sounds stiff read aloud, rewrite it
+## REVIEW Phase: Four Gates
 
-This applies to:
-- **PowerPoint**: All slide titles, bullet points, and speaker notes
-- **Word**: All prose throughout the document
-- **Both**: Executive summary especially — this is the highest-visibility text
+**Gate 0 — Visual Style Confirmation**: Before any building begins, confirm the visual style and brand choices back to the user. Summarize: chosen style, brand (if any), colors/fonts that will be used. Get explicit approval. Do not proceed to storyline or building without this.
 
-The goal is prose worthy of a top-tier consulting firm: clear, tight, forceful, and free of fluff.
+**Gate 1 — Storyline**: Present headline sequence and structure before building. Get approval.
 
----
+**Gate 2 — Sceptical Review**: After storyline is approved but **before building any slides or pages**, launch the Sceptical Review Subagent (defined in SKILL.md). Pass it the approved storyline, the synthesis document (Step 6), and the recommendations brief (Step 7). Present the subagent's full review to the user. Resolve all MUST FIX items before proceeding. SHOULD FIX items are the user's call. Do not skip this gate — it is mandatory for every final deliverable.
 
-## REVIEW Phase: User Approves Storyline and Final Output
+**Gate 3 — Final Deliverable**: Present the file. Check exec summary, flow, details, visual style, tone. Offer iteration. Multiple revision rounds are normal.
 
-This step has **two review gates**: the storyline and the final deliverable.
+## Pitfalls
 
-### Review Gate 1: Storyline Approval
-
-Before building any slides or writing any pages, present the storyline:
-
-1. **Present the proposed storyline**: "Here's the narrative arc I'm proposing using the [chosen structure] approach — [list of headlines]. Does this flow make sense?"
-2. **Confirm the structure**: "Based on your choices, the deck will have: [title slide] + [exec summary if yes] + [context & objectives if yes] + [N content pages] + [appendix if yes] = [total] pages/slides."
-3. **Check emphasis**: "I'm leading with [X] and building toward [Y]. Is that the right emphasis for your audience?"
-4. **Check for gaps**: "Anything missing from the story? Anything to reorder?"
-
-**Do not build the deliverable until the user approves the storyline.**
-
-### Review Gate 2: Final Deliverable Approval
-
-After building the deliverable:
-
-1. **Present it**: Share the file and walk through the key sections/slides.
-2. **Check the executive summary** (if included): "Does this executive summary capture the message you want?"
-3. **Check the flow**: "Does the narrative build logically? Any sections to reorder?"
-4. **Check the details**: "Any data points, recommendations, or phrasings to adjust?"
-5. **Check the visual style**: "Does the visual treatment match what you had in mind?"
-6. **Check the tone**: "Does this strike the right tone for your audience?"
-7. **Offer iteration**: "Happy to revise anything — what would you change?"
-
-**The user may request multiple rounds of revision.** This is normal — the final communication is the face of all the work. Revise and re-present until they're satisfied.
-
----
-
-## Common Pitfalls
-
-- **Topic titles instead of action titles**: "Q3 Revenue" tells nothing. "Q3 revenue declined 8% as enterprise deals slipped" tells everything.
-- **Wrong narrative structure for the audience**: An Evidence-First build for a time-constrained CEO, or an Answer-First pyramid for a skeptical board that hasn't bought in yet.
-- **Too many slides/pages**: Respect the user's page count. Use appendices for detail that doesn't fit.
-- **Data dumps**: Charts without a message are noise. Every visual must support a specific claim.
-- **Missing the "so what?" chain**: The storyline should flow logically regardless of narrative structure.
-- **Building before confirming storyline**: Always get storyline approval first.
-- **Ignoring the visual style choice**: A "clean & minimal" deck with dense tables, or a "data-heavy" deck with mostly text.
-- **Flabby prose**: Every sentence should earn its place. Apply Strunk & White ruthlessly.
-- **Ignoring format preference**: If the user asked for Word, don't give them PowerPoint (and vice versa).
-- **Skipping the editing pass**: The final deliverable should be polished. Sloppy language undermines credibility.
-- **Including sections the user turned off**: If they said no to exec summary, don't sneak one in. Respect their choices.
-- **Exposing framework scaffolding**: Never use literal framework labels ("Situation," "Complication," "Resolution," "Current State," "Future State," "Bridge," "The Options," "Evaluation Criteria") as slide titles, section headers, or exec summary labels. These are internal thinking tools — the audience should see descriptive, context-specific language that tells the story directly. The framework should be invisible; the narrative should feel natural.
+- **Topic titles instead of action titles**: "Q3 Revenue" tells nothing
+- **Wrong structure for audience**: Evidence-First for a time-constrained CEO is wrong
+- **Building the deck around numbers**: Numbers emphasize points, not construct them. If a slide is meaningless without its numbers, rewrite around the insight
+- **Flabby prose**: Apply Strunk & White ruthlessly
+- **Exposing framework scaffolding**: Never use literal framework labels as titles/headers
+- **Skipping gates**: Visual style (Gate 0), storyline (Gate 1), and sceptical review (Gate 2) must all complete before building starts
