@@ -186,7 +186,8 @@ Title page -> [Exec summary] -> [Context] -> Approach Overview -> Phase 1 (detai
 
 ```
 Gate 1 — Storyline:      Present headline sequence and structure. Get approval.
-Gate 2 — Sceptical Review: Launch sceptical review subagent (see SKILL.md). Resolve MUST FIX items.
+Gate 2 — Sceptical Review: Launch sceptical review subagent (see SKILL.md). Present proposed
+                           changes to user — user accepts/rejects each. Apply accepted changes.
                            READ 08-slides-content.md for content distillation rules.
                            READ 08a-html-design.md BEFORE PROCEEDING to Gate 3.
 Gate 3 — Visual Style:    Collect visual style + brand preferences. Confirm choices. (Defined in 08a-html-design.md)
@@ -201,7 +202,8 @@ Gate 5 — PowerPoint:      Convert HTML to pptx, run visual QA with subagent. P
 
 ```
 Gate 1 — Storyline:       Present section outline and key messages. Get approval.
-Gate 2 — Sceptical Review: Launch sceptical review subagent (see SKILL.md). Resolve MUST FIX items.
+Gate 2 — Sceptical Review: Launch sceptical review subagent (see SKILL.md). Present proposed
+                            changes to user — user accepts/rejects each. Apply accepted changes.
                             READ 08-vertical-content.md for prose and section rules.
 Gate 3 — Visual Style:     Collect visual style + brand (see 08-vertical-content.md). Confirm choices.
 Gate 4 — Document:         Generate document using docx skill. Present for review.

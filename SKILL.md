@@ -94,7 +94,13 @@ Return your review as a structured list of issues, each with:
 Be direct. Be blunt. No praise, no hedging. If everything checks out, say so in one line and move on.
 ```
 
-**After the subagent returns**: Present the full review to the user. Any MUST FIX items must be resolved before building begins. SHOULD FIX items are presented as recommendations — the user decides. CONSIDER items are noted but do not block.
+**After the subagent returns**: Present the full review to the user as a numbered list of proposed changes — **do not edit the storyline or any working documents directly**. The user (the partner) decides what gets changed. For each issue, present:
+
+1. The issue (from the subagent)
+2. The specific proposed change (what would be rewritten, cut, or added — show the new wording)
+3. Severity tag: MUST FIX / SHOULD FIX / CONSIDER
+
+Ask the user to accept or reject each item (they can also batch: "accept all MUST FIX" or "accept 1, 3, 5, reject the rest"). Only after the user responds, apply the accepted changes to the storyline and working documents. Do not proceed to building until all MUST FIX items are either accepted and applied, or the user explicitly overrides them.
 
 ## Execution Principles
 
