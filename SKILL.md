@@ -30,7 +30,7 @@ Every step has an **INPUT phase** (user provides direction) and a **REVIEW phase
 | 5. Conduct Analyses | Analysis workbook (.xlsx) + findings (.md) | [05-analyze.md](references/05-analyze.md) |
 | 6. Synthesize Findings | Synthesis document (.md) | [06-synthesize.md](references/06-synthesize.md) |
 | 7. Develop Recommendations | Recommendation brief (.md) | [07-recommend.md](references/07-recommend.md) |
-| 8. Communicate | Presentation (.pptx) or Document (.docx) | [08-communicate.md](references/08-communicate.md) |
+| 8. Communicate | Presentation (.pptx) or Document (.docx) | [08-communicate.md](references/08-communicate.md) + [08-slides-content.md](references/08-slides-content.md) or [08-vertical-content.md](references/08-vertical-content.md) |
 
 ## Running the Process
 
@@ -111,7 +111,7 @@ Be direct. Be blunt. No praise, no hedging. If everything checks out, say so in 
 
 - **Working documents** (.md): Clear headers, tables, bullets. Step number at top.
 - **Spreadsheets** (.xlsx): Use the xlsx skill. Summary tab + detailed tabs.
-- **Final output** (.pptx or .docx): User's choice in Step 8. Use pptx or docx skill.
+- **Final output** (.pptx or .docx): User's choice in Step 8. Two content tracks with separate rules: **Slides track** (`08-slides-content.md`) — distilled bullets, action titles, one message per slide; HTML design page first, then pptx conversion. **Vertical track** (`08-vertical-content.md`) — narrative prose, section depth, topic sentences; generate directly with docx skill.
 - **Issue trees** (.md + optional .svg): Indented markdown lists.
 
 ### Source Citations

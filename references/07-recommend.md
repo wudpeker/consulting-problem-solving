@@ -118,9 +118,48 @@ implementation_phases:
 ---
 ```
 
+## Slide-Ready Summary (Appended to Brief)
+
+After the full recommendation brief, include a pre-distilled summary optimized for slide consumption. The slides track (Step 8) pulls directly from this; the vertical track ignores it.
+
+```markdown
+## Slide-Ready Summary
+
+### Core Recommendation
+[1-line imperative statement — what to do and the expected outcome]
+
+### Supporting Moves
+1. [Imperative verb + object] — [quantified impact, ≤12 words]
+2. [Imperative verb + object] — [quantified impact, ≤12 words]
+3. [Imperative verb + object] — [quantified impact, ≤12 words]
+
+### Implementation at a Glance
+**Phase 1 (0-3m):**
+• [Imperative verb + action + owner]
+• [Imperative verb + action + owner]
+
+**Phase 2 (3-12m):**
+• [Imperative verb + action + owner]
+• [Imperative verb + action + owner]
+
+**Phase 3 (1-3y):**
+• [Imperative verb + action + owner]
+• [Imperative verb + action + owner]
+
+### The Stakes
+• [1-line upside if acted on]
+• [1-line downside if not]
+```
+
+**Rules for this section**:
+- Every bullet ≤12 words / ~60 characters — must fit on one slide line
+- All bullets in a group use parallel construction (all imperative, all declarative, etc.)
+- No connective prose — just the distilled points
+- This section is a compression of the brief, not new content
+
 ## REVIEW Phase
 
-Present options and let user choose. After selection, present full brief. Validate feasibility, co-develop phasing, validate impact estimates, anticipate objections together, confirm core recommendation. **Do not proceed to Step 8 until explicitly approved.**
+Present options and let user choose. After selection, present full brief (including slide-ready summary). Validate feasibility, co-develop phasing, validate impact estimates, anticipate objections together, confirm core recommendation. **Do not proceed to Step 8 until explicitly approved.**
 
 ## Pitfalls
 
