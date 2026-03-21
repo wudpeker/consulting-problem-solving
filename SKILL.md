@@ -1,6 +1,6 @@
 ---
 name: consulting-problem-solving
-description: "**Consulting Problem Solving Framework**: An interactive, user-led approach to solving complex business and organizational problems using structured consulting methodology. You act as a consulting associate; the user acts as the consulting partner who drives decisions. Walks through problem definition, MECE structuring, prioritization, work planning, analysis, synthesis, recommendations, and communication — with the user providing input, making choices, and reviewing deliverables at every step before moving forward. Produces deliverables at each stage — markdown working docs, spreadsheets for data analysis, and final output in the user's choice of PowerPoint or Word. All final prose is polished using an integrated Strunk & White writing style guide. Use this skill whenever the user mentions: strategy consulting, problem solving framework, issue tree, MECE, hypothesis-driven, pyramid principle, 80/20 analysis, root cause analysis, business case analysis, strategic recommendation, case interview prep, structured thinking, or any request to systematically break down and solve a complex problem. Also trigger when someone says things like 'help me think through this problem', 'I need a structured approach to X', 'how would a consultant approach this', or 'analyze this business situation'. Trigger when the request clearly calls for structured analytical problem solving with deliverables."
+description: "**Consulting Problem Solving Framework**: An interactive, user-led approach to solving complex business and organizational problems using structured consulting methodology. You act as a consulting associate; the user acts as the consulting partner who drives decisions. Walks through problem definition, MECE structuring, prioritization, work planning, analysis, synthesis, recommendations, and communication — with the user providing input, making choices, and reviewing deliverables at every step before moving forward. Produces deliverables at each stage — markdown working docs, spreadsheets for data analysis, and a final slide content spec (.md) or approved content for a vertical document. This skill owns content and structure only — visual rendering, styling, and deck/document generation are handled by downstream builder skills. All final prose is polished using an integrated Strunk & White writing style guide. Use this skill whenever the user mentions: strategy consulting, problem solving framework, issue tree, MECE, hypothesis-driven, pyramid principle, 80/20 analysis, root cause analysis, business case analysis, strategic recommendation, case interview prep, structured thinking, or any request to systematically break down and solve a complex problem. Also trigger when someone says things like 'help me think through this problem', 'I need a structured approach to X', 'how would a consultant approach this', or 'analyze this business situation'. Trigger when the request clearly calls for structured analytical problem solving with deliverables."
 ---
 
 # Consulting Problem Solving Framework
@@ -30,7 +30,7 @@ Every step has an **INPUT phase** (user provides direction) and a **REVIEW phase
 | 5. Conduct Analyses | Analysis workbook (.xlsx) + findings (.md) | [05-analyze.md](references/05-analyze.md) |
 | 6. Synthesize Findings | Synthesis document (.md) | [06-synthesize.md](references/06-synthesize.md) |
 | 7. Develop Recommendations | Recommendation brief (.md) | [07-recommend.md](references/07-recommend.md) |
-| 8. Communicate | Presentation (.pptx) or Document (.docx) | [08-communicate.md](references/08-communicate.md) + [08-slides-content.md](references/08-slides-content.md) or [08-vertical-content.md](references/08-vertical-content.md) |
+| 8. Communicate | Slide content spec (.md) or approved vertical content (.md) | [08-communicate.md](references/08-communicate.md) + [08-slides-content.md](references/08-slides-content.md) + [08-slide-content-spec-format.md](references/08-slide-content-spec-format.md) or [08-vertical-content.md](references/08-vertical-content.md) |
 
 ## Running the Process
 
@@ -117,12 +117,12 @@ Ask the user to accept or reject each item (they can also batch: "accept all MUS
 
 - **Working documents** (.md): Clear headers, tables, bullets. Step number at top.
 - **Spreadsheets** (.xlsx): Use the xlsx skill. Summary tab + detailed tabs.
-- **Final output** (.pptx or .docx): User's choice in Step 8. Two content tracks with separate rules: **Slides track** (`08-slides-content.md`) — distilled bullets, action titles, one message per slide; HTML design page first, then pptx conversion. **Vertical track** (`08-vertical-content.md`) — narrative prose, section depth, topic sentences; generate directly with docx skill.
+- **Final output** (.md): User's choice in Step 8. Two content tracks with separate rules: **Slides track** (`08-slides-content.md`) — distilled bullets, action titles, one message per slide. Content distillation produces a **slide content spec** (`08-slide-content-spec.md`) saved to the engagement folder — this is the single source of truth for deck content. The approved spec is then handed off to a downstream builder skill for visual rendering. **Vertical track** (`08-vertical-content.md`) — narrative prose, section depth, topic sentences. The approved content is handed off to a builder skill for formatting and styling. This skill owns content and structure only — it does not produce visual output.
 - **Issue trees** (.md + optional .svg): Indented markdown lists.
 
 ### Source Citations
 
-Every page/slide that quotes a number must include a `Source: ...` line at the bottom in small font. No superscript footnotes — just the source line. Track sources from Step 5 onward so they're available at Step 8. See `08-communicate.md` for formatting details per output type and visual style.
+Every page/slide that quotes a number must include a `Source: ...` line at the bottom. No superscript footnotes — just the source line. Track sources from Step 5 onward so they're available at Step 8. See `08-communicate.md` for formatting details per output type.
 
 ### YAML Frontmatter
 

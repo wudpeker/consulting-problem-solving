@@ -3,10 +3,10 @@
 Package all the work into a compelling deliverable. The best analysis is worthless if it isn't communicated clearly.
 
 This step has two tracks with **different content rules**:
-- **Slides (.pptx)**: Distilled, visual, one-message-per-slide. Read `08-slides-content.md` for content rules, then `08a-html-design.md` and `08b-pptx-convert.md` for production.
-- **Vertical (.docx)**: Narrative prose, section depth, longer evidence chains. Read `08-vertical-content.md` for content rules, then generate with the docx skill.
+- **Slides** *(default)*: Distilled, one-message-per-slide. Read `08-slides-content.md` for content rules. This skill produces the **slide content spec** — the approved spec is then handed off to a builder skill (html-slide-deck-editor, pptx, etc.) for visual rendering.
+- **Vertical**: Narrative prose, section depth, longer evidence chains. Read `08-vertical-content.md` for content rules. This skill produces the **approved content** — a builder skill (docx, etc.) handles formatting and styling downstream.
 
-Ask the user which format they want before proceeding. Then read **only** the relevant content rules file.
+Ask the user which format they want before proceeding (default is HTML slides). Then read **only** the relevant content rules file.
 
 ---
 
@@ -79,7 +79,7 @@ presents:
   - "07-recommendations.md#rec-core"
   - "06-synthesis.md#ans"
 narrative_structure: answer-first  # answer-first | evidence-first | narrative-arc | transformation | comparative | sequential
-format: slides  # slides | vertical
+format: slides  # slides (html-slide-deck-editor, default) | vertical
 page_count: 0
 ---
 ```
@@ -180,23 +180,27 @@ Title page -> [Exec summary] -> [Context] -> Approach Overview -> Phase 1 (detai
 
 ---
 
-## REVIEW Phase: Five Gates
+## REVIEW Phase: Content Gates
 
 ### Slides Track
 
 ```
-Gate 1 — Storyline:      Present headline sequence and structure. Get approval.
-Gate 2 — Sceptical Review: Launch sceptical review subagent (see SKILL.md). Present proposed
-                           changes to user — user accepts/rejects each. Apply accepted changes.
-                           READ 08-slides-content.md for content distillation rules.
-                           READ 08a-html-design.md BEFORE PROCEEDING to Gate 3.
-Gate 3 — Visual Style:    Collect visual style + brand preferences. Confirm choices. (Defined in 08a-html-design.md)
-Gate 4 — HTML Page:       Generate HTML, run automated QA, present to user. Get approval. (Defined in 08a-html-design.md)
-                           READ 08b-pptx-convert.md BEFORE PROCEEDING
-Gate 5 — PowerPoint:      Convert HTML to pptx, run visual QA with subagent. Present final file. (Defined in 08b-pptx-convert.md)
+Gate 1 — Storyline:         Present headline sequence and structure. Get approval.
+Gate 2 — Sceptical Review:  Launch sceptical review subagent (see SKILL.md). Present proposed
+                             changes to user — user accepts/rejects each. Apply accepted changes.
+                             READ 08-slides-content.md for content distillation rules.
+Gate 2b — Content Spec:     Distill all content per 08-slides-content.md rules.
+                             Save to {engagement_folder}/08-slide-content-spec.md.
+                             FORMAT: see references/08-slide-content-spec-format.md.
+                             Present the spec to the user for review.
+                             Revise until explicit approval.
+                             THIS SKILL STOPS HERE. The approved spec is handed off
+                             to a builder skill (html-slide-deck-editor, pptx, etc.)
+                             for visual rendering. Visual style, brand, and theme
+                             are collected by the builder, not by this skill.
 ```
 
-**Sequence is mandatory.** Do not skip gates. Do not read 08a until Gate 2 passes. Do not read 08b until Gate 4 passes.
+**Sequence is mandatory.** Do not skip gates. Do not read 08-slides-content.md until Gate 1 passes. Do not distill content (Gate 2b) until Gate 2 passes.
 
 ### Vertical Track
 
@@ -205,8 +209,9 @@ Gate 1 — Storyline:       Present section outline and key messages. Get approv
 Gate 2 — Sceptical Review: Launch sceptical review subagent (see SKILL.md). Present proposed
                             changes to user — user accepts/rejects each. Apply accepted changes.
                             READ 08-vertical-content.md for prose and section rules.
-Gate 3 — Visual Style:     Collect visual style + brand (see 08-vertical-content.md). Confirm choices.
-Gate 4 — Document:         Generate document using docx skill. Present for review.
+                            THIS SKILL STOPS HERE. The approved content is handed off
+                            to a builder skill (docx, etc.) for formatting and styling.
+                            Visual style, brand, and theme are collected by the builder.
 ```
 
 ---

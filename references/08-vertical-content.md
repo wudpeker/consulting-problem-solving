@@ -155,27 +155,7 @@ This structure gives each recommendation enough space to be convincing while sta
 
 ## Narrative-First, Not Data-First
 
-Same principle as slides, adapted for prose: **every section must make sense without numbers.** Numbers emphasize and quantify points that the narrative has already established.
-
-- **Strip test**: Remove all numbers from a section. If the argument collapses, the section is structured around data, not insight. Rewrite.
-- **Integrate, don't list**: Data points belong inside sentences that make arguments, not in standalone lists.
-- **Fewer, stronger numbers**: A section with 2 well-placed figures is stronger than one with 8 loosely sourced stats.
-
----
-
-## Visual Style (Collected at Gate 3)
-
-After Gate 2 (sceptical review), collect visual style using **AskUserQuestion**:
-
-**Q-W1 — Visual Style** (header: "Visual Style"): Clean & Minimal / Data-Heavy / Visually Rich / Corporate/Branded.
-- **Clean & Minimal**: Generous white space, one accent color, minimal decoration. Elegant restraint.
-- **Data-Heavy**: Dense tables, multiple data points per section, muted palette. Information-rich.
-- **Visually Rich**: Framework diagrams, icons, color-coded categories. Expressive and layered.
-- **Corporate/Branded**: Apply user's brand colors, fonts, match existing materials.
-
-**Q-W2 — Brand Styling** (header: "Brand"): Check `references/styles/` for available profiles. Options: each found brand + "None" + "Custom." If selected, read the brand file and apply formatting. If "Custom," collect brand elements from user and create a new file from `references/brand-styling-template.md`.
-
-Visual style governs density and feel. Brand file (if any) controls visual identity — colors, fonts, logo.
+Same principle as slides — every section must make sense without numbers. Numbers emphasize points, not construct them. Strip test: remove all numbers; if the argument collapses, rewrite around the insight. See `08-slides-content.md` § "Narrative-First" for full rules.
 
 ---
 

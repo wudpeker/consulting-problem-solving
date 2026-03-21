@@ -151,11 +151,7 @@ After the full recommendation brief, include a pre-distilled summary optimized f
 • [1-line downside if not]
 ```
 
-**Rules for this section**:
-- Every bullet ≤12 words / ~60 characters — must fit on one slide line
-- All bullets in a group use parallel construction (all imperative, all declarative, etc.)
-- No connective prose — just the distilled points
-- This section is a compression of the brief, not new content
+**Rules for this section**: Follows slide bullet rules from `08-slides-content.md` — every bullet ≤12 words, parallel construction, no connective prose. This section compresses the brief; it does not add new content.
 
 ## REVIEW Phase
 
