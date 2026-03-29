@@ -3,7 +3,7 @@
 Package all the work into a compelling deliverable. The best analysis is worthless if it isn't communicated clearly.
 
 This step has two tracks with **different content rules**:
-- **Slides** *(default)*: Distilled, one-message-per-slide. Read `08-slides-content.md` for content rules. This skill produces the **slide content spec** — the approved spec is then handed off to a builder skill (html-slide-deck-editor, pptx, etc.) for visual rendering.
+- **Slides** *(default)*: Distilled, one-message-per-slide. Read `08-slides-content.md` for content rules. This skill produces the **slide content** — the approved slide content is then handed off to a builder skill (html-slide-deck-editor, pptx, etc.) for visual rendering.
 - **Vertical**: Narrative prose, section depth, longer evidence chains. Read `08-vertical-content.md` for content rules. This skill produces the **approved content** — a builder skill (docx, etc.) handles formatting and styling downstream.
 
 Ask the user which format they want before proceeding (default is HTML slides). Then read **only** the relevant content rules file.
@@ -189,12 +189,12 @@ Gate 1 — Storyline:         Present headline sequence and structure. Get appro
 Gate 2 — Sceptical Review:  Launch sceptical review subagent (see SKILL.md). Present proposed
                              changes to user — user accepts/rejects each. Apply accepted changes.
                              READ 08-slides-content.md for content distillation rules.
-Gate 2b — Content Spec:     Distill all content per 08-slides-content.md rules.
-                             Save to {engagement_folder}/08-slide-content-spec.md.
-                             FORMAT: see references/08-slide-content-spec-format.md.
-                             Present the spec to the user for review.
+Gate 2b — Slide Content:    Distill all content per 08-slides-content.md rules.
+                             Save to {engagement_folder}/08-slide-content.md.
+                             FORMAT: see references/08-slide-content-format.md.
+                             Present the slide content to the user for review.
                              Revise until explicit approval.
-                             THIS SKILL STOPS HERE. The approved spec is handed off
+                             THIS SKILL STOPS HERE. The approved slide content is handed off
                              to a builder skill (html-slide-deck-editor, pptx, etc.)
                              for visual rendering. Visual style, brand, and theme
                              are collected by the builder, not by this skill.

@@ -195,13 +195,13 @@ When a framework slide has multiple blocks and subsequent slides detail each, us
 
 ## Saving the Content Spec (Gate 2b)
 
-After content distillation is complete, save the distilled content as a **slide content spec file**. This file becomes the single source of truth for all deck generation.
+After content distillation is complete, save the distilled content as a **slide content file**. This file becomes the single source of truth for all deck generation.
 
 ### Process
 
 1. **Distill all slides** using the process above — every slide should have its action title, content fields, and layout choice finalized.
-2. **Read the format definition**: `references/08-slide-content-spec-format.md` — this defines the exact schema, field names, primitive mapping, and rules.
-3. **Write the spec file** to `{engagement_folder}/08-slide-content-spec.md` following the format definition exactly.
+2. **Read the format definition**: `references/08-slide-content-format.md` — this defines the exact schema, field names, primitive mapping, and rules.
+3. **Write the spec file** to `{engagement_folder}/08-slide-content.md` following the format definition exactly.
 4. **Present the spec to the user** for review. Walk through each slide's content. The user approves, requests changes, or rejects.
 5. **Revise until explicit approval.** The approved spec is the final output of this skill for the slides track.
 

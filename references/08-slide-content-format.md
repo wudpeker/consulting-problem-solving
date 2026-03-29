@@ -1,12 +1,12 @@
-# Slide Content Spec — Format Definition
+# Slide Content — Format Definition
 
-This file defines the format for `08-slide-content-spec.md` — the engagement-specific file that serves as the **single source of truth** for all slide content. The deck builder (html-slide-deck-editor or pptx skill) reads this file verbatim. No rephrasing, no re-interpretation.
+This file defines the format for `08-slide-content.md` — the engagement-specific file that serves as the **single source of truth** for all slide content. The deck builder (html-slide-deck-editor or pptx skill) reads this file verbatim. No rephrasing, no re-interpretation.
 
 ---
 
 ## Purpose
 
-The slide content spec captures the output of content distillation (Gate 2b) in a structured, builder-readable format. It separates **what to say** (this spec) from **how it looks** (visual style, theme, colors, visualization choices — handled by the deck builder at Gate 3).
+The slide content captures the output of content distillation (Gate 2b) in a structured, builder-readable format. It separates **what to say** (this spec) from **how it looks** (visual style, theme, colors, visualization choices — handled by the deck builder at Gate 3).
 
 **Key invariant:** Regenerating a deck from the same spec file produces identical content. Only visual treatment changes.
 
